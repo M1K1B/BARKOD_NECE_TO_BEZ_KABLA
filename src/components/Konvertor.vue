@@ -36,7 +36,7 @@ export default {
     data(){
         return{
             api: '',
-            unos: '',
+            unos: '0',
             vrednost: '',
             pvaluta: 'RSD',
             dvaluta: 'EUR',
