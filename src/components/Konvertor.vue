@@ -12,7 +12,7 @@
                         <option value="JPY">JPY</option>
                     </select>
                 </div>
-                <img src="../assets/arrow-right-circle.svg" class="arrow mx-auto" alt="">
+                <img @click="zamena" src="../assets/arrow-right-circle.svg" class="arrow mx-auto" alt="">
                 <div class="col-12 col-md-5 mx-auto mb-4">
                     <label for="exampleInputEmail1" class="form-label">Konverzija u:</label>
                     <input type="text" v-model="vrednost" disabled class="form-control mb-3" id="exampleInputEmail1" aria-describedby="emailHelp">
@@ -40,6 +40,7 @@ export default {
             vrednost: '',
             pvaluta: 'RSD',
             dvaluta: 'EUR',
+            zvaluta: '',
         }
     },
     methods:{
@@ -50,6 +51,12 @@ export default {
                 this.vrednost = response.data.result
             }).catch(e => {this.errors.push(e)})
             
+        },
+        zamena(){
+            this.zvaluta=this.pvaluta
+            this.pvaluta=this.dvaluta
+            this.dvaluta=this.zvaluta
+            this.racun()
         }
     }
 
