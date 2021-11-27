@@ -2,22 +2,18 @@
   <Konvertor class="mb-3" />
   <div class="row mx-auto col-12">
     <Kvote class="mb-3" />
-    <div class="col-12 col-md-1"></div>
-    <Graf class="mb-3" />
   </div>
 </template>
 
 <script>
 import Konvertor from './components/Konvertor.vue'
 import Kvote from './components/Kvote.vue'
-import Graf from './components/Graf.vue'
 
 export default {
   name: 'App',
   components: {
     Konvertor,
-    Kvote,
-    Graf
+    Kvote
   }
 }
 </script>
